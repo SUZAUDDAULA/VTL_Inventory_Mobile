@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorBlack">#0F0E0E</color>
+    <color name="colorWhite">#F8F7F7</color>
+
+    <color name="blue_grey_200">#B0BEC5</color>
+    <color name="blue_grey_300">#90A4AE</color>
+    <color name="blue_grey_400">#78909C</color>
+    <color name="blue_grey_600">#BAC2CD</color>
+    <color name="blue_grey_800">#37474F</color>
+    <color name="grey_40">#999999</color>
+    <color name="grey_60">#666666</color>
+    <color name="grey_90">#263238</color>
+    <color name="light_green_500">#8BC34A</color>
+    <color name="light_green_900">#33691E</color>
+    <color name="back_daily">#FF6E40</color>
+    <color name="color_sales">#89C546</color>
+    <color name="color_purchase">#40C4FF</color>
+    <color name="color_inventory">#7A63D5</color>
+</resources>
