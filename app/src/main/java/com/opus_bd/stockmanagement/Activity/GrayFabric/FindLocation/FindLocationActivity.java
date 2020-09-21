@@ -73,7 +73,6 @@ public class FindLocationActivity extends AppCompatActivity {
             } else {
                 String scanId = result.getContents().toString();
                 GetGrayRollDetailInfo(scanId);
-
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
