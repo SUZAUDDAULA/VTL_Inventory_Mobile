@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.GrayFabric.RackIn.QRActivity"></activity>
+        <activity android:name=".Activity.GrayFabric.FindLocation.FindLocationActivity"></activity>
+        <activity android:name=".Activity.GrayFabric.RackIn.QRActivity" />
         <activity android:name=".Activity.GrayFabric.RackIn.GrayFebricScanActivity" />
         <activity android:name=".Activity.GrayFabric.Rackout.GrayfebricRackOutQrActivity" />
         <activity android:name=".Activity.GrayFabric.Rackout.GrayFebricRackoutbyidActivity" />

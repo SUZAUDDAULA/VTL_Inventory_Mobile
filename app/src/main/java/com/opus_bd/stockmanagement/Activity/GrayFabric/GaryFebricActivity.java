@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.opus_bd.stockmanagement.Activity.GrayFabric.FindLocation.FindLocationActivity;
 import com.opus_bd.stockmanagement.Activity.GrayFabric.RackIn.GrayFebricRackInActivity;
 import com.opus_bd.stockmanagement.Activity.GrayFabric.RackIn.QRActivity;
 import com.opus_bd.stockmanagement.Activity.GrayFabric.Rackout.GrayfebricRackOutQrActivity;
@@ -34,8 +35,8 @@ public class GaryFebricActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gary_febric);
         ButterKnife.bind(this);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
         ButterKnife.bind(this);
         imageload();
     }
@@ -59,9 +60,19 @@ public class GaryFebricActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
 
-    } @OnClick(R.id.cvGrayFebric)
+    }
+
+    @OnClick(R.id.cvGrayFebric)
     public void cvGrayFebricOnclick() {
         Intent intent = new Intent(GaryFebricActivity.this, GrayfebricRackOutQrActivity.class);
+        startActivity(intent);
+        finish();
+
+    }
+
+    @OnClick(R.id.btnFindLocation)
+    public void btnFindLocationOnclick() {
+        Intent intent = new Intent(GaryFebricActivity.this, FindLocationActivity.class);
         startActivity(intent);
         finish();
 
