@@ -29,6 +29,9 @@ public class GaryFebricActivity extends AppCompatActivity {
     @BindView(R.id.ivGrayFebricTrans)
     ImageView ivGrayFebricTrans;
 
+    @BindView(R.id.findLocationIV)
+    ImageView findLocationIV;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +48,7 @@ public class GaryFebricActivity extends AppCompatActivity {
         Glide.with(this).load(R.drawable.ic_rackin).into(ivFinishedFebric);
         Glide.with(this).load(R.drawable.ic_rackout).into(ivGrayFebric);
         Glide.with(this).load(R.drawable.finised_febric).into(ivGrayFebricTrans);
+        Glide.with(this).load(R.drawable.ic_find_location).into(findLocationIV);
 
     }
 

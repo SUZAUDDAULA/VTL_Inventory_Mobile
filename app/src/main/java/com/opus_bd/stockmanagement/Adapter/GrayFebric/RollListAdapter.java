@@ -8,8 +8,10 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.opus_bd.stockmanagement.Model.GrayFabric.Scan.GrayRollDetailInfo;
 import com.opus_bd.stockmanagement.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -19,9 +21,19 @@ public class RollListAdapter extends RecyclerView.Adapter<RollListAdapter.Transa
     private final Context context;
     private List<String> items;
 
+    List<GrayRollDetailInfo> grayRollDetailInfoList = new ArrayList<>();
+
     public RollListAdapter(List<String> items, Context context) {
         this.items = items;
         this.context = context;
+    }
+
+    public List<GrayRollDetailInfo> getGrayRollDetailInfoList() {
+        return grayRollDetailInfoList;
+    }
+
+    public void setGrayRollDetailInfoList(List<GrayRollDetailInfo> grayRollDetailInfoList) {
+        this.grayRollDetailInfoList = grayRollDetailInfoList;
     }
 
     @Override
@@ -36,6 +48,12 @@ public class RollListAdapter extends RecyclerView.Adapter<RollListAdapter.Transa
     public void onBindViewHolder(TransactionViewHolder holder, int position) {
         String item = items.get(position);
         holder.set(item);
+        try {
+
+        } catch (Exception e){
+
+        }
+        holder.cell_location_tv.setText(""+grayRollDetailInfoList.get(position).getGrayFebricsStorageDetail().getCellNo());
     }
 
     @Override
@@ -50,6 +68,9 @@ public class RollListAdapter extends RecyclerView.Adapter<RollListAdapter.Transa
 
         @BindView(R.id.tvString)
         TextView tvString;
+
+        @BindView(R.id.cell_location_tv)
+        TextView cell_location_tv;
 
         public TransactionViewHolder(View itemView) {
             super(itemView);

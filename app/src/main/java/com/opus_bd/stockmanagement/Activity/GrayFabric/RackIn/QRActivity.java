@@ -28,6 +28,7 @@ import com.opus_bd.stockmanagement.Utilts.SharedPrefManager;
 import com.opus_bd.stockmanagement.Utilts.Utilities;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,7 +40,7 @@ import retrofit2.Response;
 import static android.widget.Toast.LENGTH_LONG;
 
 public class QRActivity extends AppCompatActivity {
-    public int counterRoll = 0, btncode;
+    public int counterRoll = 0, counterCell = 0, btncode;
     @BindView(R.id.buttonScanRoll)
     Button buttonScanRoll;
     @BindView(R.id.buttonScanQRCode)
@@ -47,7 +48,12 @@ public class QRActivity extends AppCompatActivity {
     int c = 0, rackid, detailsid;
     String qr;
     ArrayList<String> rollList = new ArrayList<String>();
+    ArrayList<String> cellList = new ArrayList<String>();
     ArrayList<Roll> rollArrayList = new ArrayList<>();
+    ArrayList<Roll> cellLocationArrayList = new ArrayList<>();
+
+    List<GrayRollDetailInfo> grayRollDetailInfoList = new ArrayList<>();
+
     RollListAdapter rollListAdapter;
     @BindView(R.id.rvRoll)
     RecyclerView rvRoll;
@@ -132,10 +138,16 @@ public class QRActivity extends AppCompatActivity {
                             Addroll(id);
                             Roll roll1 = new Roll();
                             roll1.setDetailsId(response.body().getGrayFebricsDetailId());
-                            rollArrayList.add(rollArrayList.size(), roll1);
+                            if (response.body().getGrayFebricsStorageDetail().getCellNo()!=null){
+                                rollArrayList.add(rollArrayList.size(), roll1);
+                            }
                             qr = response.body().getGrayFebricsStorageDetail().getQrCode();
                             rackid = response.body().getId();
                             detailsid = response.body().getGrayFebricsDetailId();
+
+                            grayRollDetailInfoList.add(response.body());
+                            rollListAdapter.setGrayRollDetailInfoList(grayRollDetailInfoList);
+
                         } else {
                             Toasty.error(QRActivity.this, "Not Found", Toast.LENGTH_SHORT).show();
 //                            Intent intent = new Intent(QRActivity.this, List2Activity.class);
@@ -223,6 +235,23 @@ public class QRActivity extends AppCompatActivity {
 
 
     }
+
+//    public void AddCellLocation(String cellNo) {
+//        counterCell++;
+//
+//        try {
+//            cellList.add(counterCell + ". " + cellNo);
+//            rollListAdapter.notifyDataSetChanged();
+//
+//            for (int i = 0; i < cellList.size(); i++) {
+//                Utilities.showLogcatMessage("notifyDataSetChanged " + cellList.get(i));
+//            }
+//        } catch (Exception e) {
+//            Utilities.showLogcatMessage("notifyDataSetChanged " + e.toString());
+//        }
+//
+//
+//    }
 
 
 }
