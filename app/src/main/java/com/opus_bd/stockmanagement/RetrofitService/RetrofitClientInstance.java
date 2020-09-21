@@ -12,7 +12,8 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class RetrofitClientInstance {
     //private static final String BASE_URL = "http://103.134.88.13:72/";//(Live)
-     private static final String BASE_URL = "http://103.134.88.13:1028/";//(Test)
+//     private static final String BASE_URL = "http://103.134.88.13:1028/";//(Test)
+     private static final String BASE_URL = "http://36.255.68.234/";
     // private static final String BASE_URL = "http://a82d58b0.ngrok.io/";
     private static Retrofit retrofit;
     private static Gson gson = new GsonBuilder()
